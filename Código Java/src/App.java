@@ -37,6 +37,23 @@ public class App {
             else
                 System.out.println("Vamos Prosseguir");
         } while(escolha < 1 || escolha >2);
+
+        switch (escolha) {
+            case 1:
+                System.out.printf("%n Área administrativa - Vamos mostrar todos os vendedores da loja e os anos de experiência: %n");
+                for (Vendedor funcionario : vendedor) {
+                    System.out.printf("%n %s,  que tem %d ano(s) de Experiência",funcionario.getNome(), funcionario.getExperiencia());
+                }
+                System.out.printf("%n%n");
+                //add vendedor, add carro
+                break;
+            case 2:
+            System.out.printf("%n Área do Cliente - Vamos mostrar todos os carros da loja vendidos e não vendidos %n");
+                break;
+        
+            default:
+                break;
+        }
         
         sc.close();
     }
