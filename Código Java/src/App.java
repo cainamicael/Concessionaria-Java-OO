@@ -1,9 +1,13 @@
 import java.util.ArrayList;
+import java.util.Scanner;
+
 import classes.Cliente;
 import classes.Vendedor;
 
 public class App {
     public static void main(String[] args) throws Exception {
+
+        Scanner sc = new Scanner(System.in);
         //Cadastrando alguns clientes
 
         ArrayList<Cliente> cliente = new ArrayList<Cliente>();
@@ -20,7 +24,20 @@ public class App {
         vendedor.add(new Vendedor("Enzo Schneider", "4.000.000", 3));
         vendedor.add(new Vendedor("Moacir Agripino", "5.000.000", 30));
 
+        //menu 01
         System.out.println("Olá! Bem vindo a Poo Multimarcas - Seu carro novo está aqui!!!");
+        int escolha = -1;
+        do{
+            System.out.println("Escolha uma opção abaixo:");
+            System.out.printf("%n [1] Área Administrativa %n [2] Área do Comprador");
+            System.out.printf("%nSua escolha: ");
+            escolha = sc.nextInt(); 
+            if (escolha < 1 || escolha >2)
+                System.out.println("Opção inválida! Tente novamente!");
+            else
+                System.out.println("Vamos Prosseguir");
+        } while(escolha < 1 || escolha >2);
         
+        sc.close();
     }
 }
