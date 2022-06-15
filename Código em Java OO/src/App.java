@@ -2,6 +2,7 @@ import java.util.ArrayList;
 import java.util.Scanner;
 
 import classes.Cliente;
+import classes.Montadora;
 import classes.Vendedor;
 
 public class App {
@@ -24,7 +25,14 @@ public class App {
         vendedor.add(new Vendedor("Enzo Schneider", "4.000.000", 3));
         vendedor.add(new Vendedor("Moacir Agripino", "5.000.000", 30));
 
-        //cadastrar Montadoras
+        //cadastrar algumas Montadoras
+        ArrayList<Montadora> montadora = new ArrayList<Montadora>();
+        montadora.add(new Montadora("43.999.424/0001-14", "VOLVO DO BRASIL VEICULOS LTDA", "Avenida Juscelino K de Oliveira, 2600, Lat Direita CIC, CURITIBA - PR CEP: 81260-900", "(41) 3405-5694"));
+
+        montadora.add(new Montadora("03.472.246/0004-05", "AUDI DO BRASIL INDUSTRIA E COMERCIO DE VEICULOS LTDA.", "Avenida das Industrias, S/N Galpaodocas 81 e 82 DISTRITO INDUSTRIAL BENEDITO STORANIVINHEDO - SP CEP: 13288-163", "(11) 3041-2959"));
+
+        montadora.add(new Montadora("", "nome", "endereco", "telefone"));
+
 
         //cadastrar Carros
 
