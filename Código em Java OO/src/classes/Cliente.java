@@ -48,6 +48,12 @@ public class Cliente extends Dados implements InterCliente {
     public String buscar() {
         return "O Cliente veio buscar o carro que comprou! ";
     }
+
+    @Override
+    public String toString() {
+        return "Cliente:  Nome = " + this.nome + ", Telefone = " + this.telefone;
+    }
+    
     
 
 }

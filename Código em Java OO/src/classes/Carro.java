@@ -121,8 +121,17 @@ public class Carro implements InterCarro {
         this.montadoraQueForneceu = montadoraQueForneceu;
     }
 
+    public Cliente getComprador() {
+        return comprador;
+    }
+    public void setComprador(Cliente comprador) {
+        this.comprador = comprador;
+    }
+    
+
     //Implementando os Métodos Abstratos - Uso de Encapsulamento(Interface) e Polimorfismo(Sobrescrever)
 
+   
     @Override
     public String andar() {
         return "O carro está andando! tudo está funcionando normalmente!";
@@ -130,15 +139,13 @@ public class Carro implements InterCarro {
 
     @Override
     public String statusCarroVenda() {
-        return "Carro [ marca = " + marca + ", modelo = " + modelo + ", ano = "+ ano + ", montadoraQueForneceu = " + montadoraQueForneceu.getNome() + "valor = " + valor + ", quantidade em estoque = " + qtdEstoque +" ]";
+        return "À Venda: Marca = " + marca + ", modelo = " + modelo + ", ano = "+ ano + ", valor = " + valor + ", quantidade em estoque = " + qtdEstoque;
     }
     @Override
     public String statusCarroVendido() {
-        return "Carro [ marca = " + marca + ", modelo = " + modelo+ ", montadoraQueForneceu = " + montadoraQueForneceu + ", valor = " + valor + "ano = " + ano + ", comprador = " + comprador + "]";
+        return "Vendido:  Marca = " + marca + ", modelo = " + modelo + ", valor = " + valor + ", ano = " + ano + ", comprador = " + comprador.getNome();
     }
-    
-
-    
+  
 
 }
     
