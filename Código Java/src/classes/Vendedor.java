@@ -76,7 +76,6 @@ public class Vendedor extends Dados implements InterVendedor{
     @Override
     public void realizarVenda(Cliente comprador/*, Carro carroDaVenda*/) {
         
-        
     }
  
 }

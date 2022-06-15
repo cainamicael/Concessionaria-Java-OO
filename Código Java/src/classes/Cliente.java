@@ -45,9 +45,5 @@ public class Cliente extends Dados implements InterCliente {
         System.out.printf("%s decidiu comprar o carro! Sua forma de pagamento é: %s",this.nome, this.formaDePagamento);
         
     }
-    
-
-    
-    
 
 }

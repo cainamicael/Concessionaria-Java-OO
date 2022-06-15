@@ -1,5 +1,5 @@
 package classes;
-
+//Classe mãe(Superclasse) - Abstrata (Polimorfismo) 
 public abstract class Dados {
 
     protected String nome;
@@ -32,9 +32,6 @@ public abstract class Dados {
         this.telefone = telefone;
     }
 
-    
-
     // Rg e Telefone são Strings porque podem ter vários tipos de escrita Ex: 988888888 ou 9 8888-8888, logo, String aceita tudo
-
-    
+ 
 }
