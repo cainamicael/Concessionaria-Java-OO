@@ -1,6 +1,7 @@
 import java.util.ArrayList;
 import java.util.Scanner;
 
+import classes.Carro;
 import classes.Cliente;
 import classes.Montadora;
 import classes.Vendedor;
@@ -33,7 +34,15 @@ public class App {
         montadora.add(new Montadora("31.715.616/0003-34", "MERCEDES-BENZ CARS & VANS BRASIL - INDUSTRIA E COMERCIO DE VEICULOS LTDA", "Avenida Mercedes Benz, 679 Centro Log Viracopos Predio 411 Mznino DISTRITO INDUSTRIAL CAMPINAS - SP CEP: 13054-750", "(11) 4173-6611")); //MERCEDES-BENS
         montadora.add(new Montadora("10.313.717/0001-47", "AGUAR E LAND ROVER BRASIL INDUSTRIA E COMERCIO DE VEICULOS LTDA", "Avenida Ibirapuera, 2332 Andar 10 INDIANOPOLIS SAO PAULO - SP CEP: 04028-002", "(11) 5056-7000")); //JAGUAR E LAND ROVER
 
-        //cadastrar Carros
+ 
+        //cadastrar alguns Carros
+        ArrayList<Carro> carro = new ArrayList<Carro>();
+        carro.add(new Carro("2JK 19JxWA 6M g39426", "KIU-6723", "Volvo", "Xc 40 Recharge", "Azul", 2023, 310000.00, 3, montadora.get(0))); // não vendido
+        carro.add(new Carro("735 8ARAe0 Zy Pg6951", "MZS-8413", "Audi", "RS6 Avant", "Vermelho", 2012, 139900.00, 1, montadora.get(1))); // não vendido
+        carro.add(new Carro("3M7 1829RY n0 Ta7363", "MZV-3801", "Bmw", "X6", "Branca", 2021, 691950.00, montadora.get(2), cliente.get(1)));//vendido
+
+
+        
 
         //menu 01
         System.out.println("Olá! Bem vindo a Premium Car Multimarcas  - Não vendemos carros, vendemos sonhos!!!");

@@ -4,12 +4,14 @@ public class Carro implements InterCarro {
 
     private String chassi, placa, marca, modelo, cor; 
     public int ano;
-    private float valor;     
+    private double valor;     
     private boolean vendido;
     private int qtdEstoque;
     private Montadora montadoraQueForneceu;
+    private Cliente comprador;
     
-    public Carro(String chassi, String placa, String marca, String modelo, String cor, int ano, float valor, boolean vendido, int qtdEstoque, Montadora montadoraQueForneceu) {
+    //Construtor para carros que não foram vendido
+    public Carro(String chassi, String placa, String marca, String modelo, String cor, int ano, double valor,  int qtdEstoque, Montadora montadoraQueForneceu) {
         this.chassi = chassi;
         this.placa = placa;
         this.marca = marca;
@@ -17,9 +19,24 @@ public class Carro implements InterCarro {
         this.cor = cor;
         this.ano = ano;
         this.valor = valor;
-        this.vendido = vendido;
         this.qtdEstoque = qtdEstoque;
         this.montadoraQueForneceu = montadoraQueForneceu;
+        this.vendido = false;
+        this.comprador = null;
+    }
+    //construtor para carros que já foram vendidos
+    public Carro(String chassi, String placa, String marca, String modelo, String cor, int ano, double valor, Montadora montadoraQueForneceu, Cliente comprador) {
+        this.chassi = chassi;
+        this.placa = placa;
+        this.marca = marca;
+        this.modelo = modelo;
+        this.cor = cor;
+        this.ano = ano;
+        this.valor = valor;
+        this.montadoraQueForneceu = montadoraQueForneceu;
+        this.comprador = comprador;
+        this.qtdEstoque = 1;
+        this.vendido = true;
     }
 
     //Gets e Sets
@@ -72,11 +89,11 @@ public class Carro implements InterCarro {
         this.ano = ano;
     }
 
-    public float getValor() {
+    public double getValor() {
         return valor;
     }
 
-    public void setValor(float valor) {
+    public void setValor(double valor) {
         this.valor = valor;
     }
 
@@ -107,14 +124,21 @@ public class Carro implements InterCarro {
     //Implementando os Métodos Abstratos - Uso de Encapsulamento(Interface) e Polimorfismo(Sobrescrever)
 
     @Override
-    public String status(){
-        return "Modelo: " + this.modelo +  " Marca: "+ this.marca;
-    }
-
-    @Override
     public String andar() {
         return "O carro está andando! tudo está funcionando normalmente!";
     }
+
+    @Override
+    public String statusCarroVenda() {
+        return "Carro [ marca = " + marca + ", modelo = " + modelo + ", ano = "+ ano + ", montadoraQueForneceu = " + montadoraQueForneceu.getNome() + "valor = " + valor + ", quantidade em estoque = " + qtdEstoque +" ]";
+    }
+    @Override
+    public String statusCarroVendido() {
+        return "Carro [ marca = " + marca + ", modelo = " + modelo+ ", montadoraQueForneceu = " + montadoraQueForneceu + ", valor = " + valor + "ano = " + ano + ", comprador = " + comprador + "]";
+    }
+    
+
+    
 
 }
     

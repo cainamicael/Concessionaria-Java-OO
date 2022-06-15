@@ -44,4 +44,10 @@ public class Cliente extends Dados implements InterCliente {
         return this.nome + " decidiu comprar o carro! Sua forma de pagamento é: " + this.formaDePagamento;
     }
 
+    @Override
+    public String buscar() {
+        return "O Cliente veio buscar o carro que comprou! ";
+    }
+    
+
 }
