@@ -24,6 +24,10 @@ public class App {
         vendedor.add(new Vendedor("Enzo Schneider", "4.000.000", 3));
         vendedor.add(new Vendedor("Moacir Agripino", "5.000.000", 30));
 
+        //cadastrar Montadoras
+
+        //cadastrar Carros
+
         //menu 01
         System.out.println("Olá! Bem vindo a Poo Multimarcas - Seu carro novo está aqui!!!");
         int escolha = -1;
