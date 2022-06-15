@@ -3,7 +3,7 @@ package classes;
 public class Vendedor extends Dados implements InterVendedor{
     
     private int experiencia;
-  // private Carro carroDaVenda;
+    private Carro carroDaVenda;
     private Cliente comprador;
 
     //Construtores - Uso de Múltiplos Construtores
@@ -18,12 +18,12 @@ public class Vendedor extends Dados implements InterVendedor{
         this.experiencia = experiencia;
     }
 
-    public Vendedor(String nome, String rg, int experiencia, /*Carro carroDaVenda,*/ Cliente comprador) {
+    public Vendedor(String nome, String rg, int experiencia, Carro carroDaVenda, Cliente comprador) {
         
         this.nome = nome;
         this.rg = rg;
         this.experiencia = experiencia;
-        //this.carroDaVenda = carroDaVenda;
+        this.carroDaVenda = carroDaVenda;
         this.comprador = comprador;
     }
 
@@ -37,13 +37,13 @@ public class Vendedor extends Dados implements InterVendedor{
         this.experiencia = experiencia;
     }
 
-   /*public Carro getCarroDaVenda() {
+   public Carro getCarroDaVenda() {
         return carroDaVenda;
-    }*/
+    }
 
-    /*public void setCarroDaVenda(Carro carroDaVenda) {
+    public void setCarroDaVenda(Carro carroDaVenda) {
         this.carroDaVenda = carroDaVenda;
-    }*/
+    }
 
     public Cliente getComprador() {
         return comprador;
@@ -55,26 +55,26 @@ public class Vendedor extends Dados implements InterVendedor{
 
     //Implementando os Métodos Abstratos - Uso de Encapsulamento(Interface) e Polimorfismo(Sobrescrever)
 
+
     @Override
-    public void fazerOrcamento(Cliente comprador) {
+    public void gerarNotaFiscal(Cliente comprador, Carro carroDaVenda) {
     
         
     }
 
     @Override
-    public void gerarNotaFiscal(Cliente comprador/*, Carro carroDaVenda*/) {
+    public void intermediarTesteDrive(Cliente comprador, Carro carroDaVenda) {
     
         
     }
 
     @Override
-    public void intermediarTesteDrive(Cliente comprador/*, Carro carroDaVenda*/) {
-    
+    public void realizarVenda(Cliente comprador, Carro carroDaVenda) {
         
     }
 
     @Override
-    public void realizarVenda(Cliente comprador/*, Carro carroDaVenda*/) {
+    public void fazerOrcamento(Cliente comprador, Carro carroDaVenda) {
         
     }
  
