@@ -37,13 +37,20 @@ public class App {
  
         //cadastrar alguns Carros
         ArrayList<Carro> carro = new ArrayList<Carro>();
-        carro.add(new Carro("2JK 19JxWA 6M g39426", "KIU-6723", "Volvo", "Xc 40 Recharge", "Azul", 2023, 310000.00, 3, montadora.get(0))); // não vendido
-        carro.add(new Carro("735 8ARAe0 Zy Pg6951", "MZS-8413", "Audi", "RS6 Avant", "Vermelho", 2012, 139900.00, 1, montadora.get(1))); // não vendido
-        carro.add(new Carro("3M7 1829RY n0 Ta7363", "MZV-3801", "Bmw", "X6", "Branca", 2021, 691950.00, montadora.get(2), cliente.get(1)));//vendido
 
+        //Carros já vendidos
+        carro.add(new Carro("3M7 1829RY n0 Ta7363", "MZV-3801", "Bmw", "X6", "Branca", 2021, 691950.00, montadora.get(2), cliente.get(1)));
+        carro.add(new Carro("66z AA4F4C Z1 eb1588", "NBA-0153", "Jaguar", "f-type Conversível", "Nardo Gray", 2022, 600000.00, montadora.get(4), cliente.get(2)));
+        carro.add(new Carro("504 4bAM5h NV 330984", "NAM-3667", "Volvo", "Xc 90 Recharge R-Design", "bege", 2023, 539950.00, montadora.get(0), cliente.get(0)));
+        carro.add(new Carro("2du J7Xss0 d8 3h9533", "MDH-9548", "Mercedes-Benz", "Gt-63 AMG", "Branco", 2021, 1683900.00, montadora.get(3), cliente.get(3)));
 
+        //Carros não vendidos
+        carro.add(new Carro("2JK 19JxWA 6M g39426", "KIU-6723", "Volvo", "Xc 40 Recharge", "Azul", 2023, 310000.00, 3, montadora.get(0))); 
+        carro.add(new Carro("735 8ARAe0 Zy Pg6951", "MZS-8413", "Audi", "RS6 Avant", "Vermelho", 2012, 139900.00, 1, montadora.get(1))); 
+        carro.add(new Carro("2Sz hAxg5Z 4j 5g1706", "JVT-5095", "Jaguar", "I-Pace", "Prata", 2020, 304162.00, 2, montadora.get(4)));
+        carro.add(new Carro("68r R7ls62 7c vb2730", "MYB-3929", "Bmw", "320i", "Branco", 2013,  92990.00, 6, montadora.get(2)));
+        carro.add(new Carro("7AU 9t45Au 4x Aw4677", "HVB-0203", "Mercedes-Benz", "G 63 amg", "Cinza", 2019, 1049900.00, 2, montadora.get(3)));
         
-
         //menu 01
         System.out.println("Olá! Bem vindo a Premium Car Multimarcas  - Não vendemos carros, vendemos sonhos!!!");
         int escolha = -1;
