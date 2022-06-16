@@ -1,4 +1,5 @@
 package classes;
+import java.util.Random;
 //Uso da Herança do tipo TEM UM e Implementação da Interface
 public class Vendedor extends Dados implements InterVendedor{
     
@@ -58,6 +59,19 @@ public class Vendedor extends Dados implements InterVendedor{
 
     @Override
     public void gerarNotaFiscal(Cliente comprador, Carro carroDaVenda) {
+        
+        //gerar numero da nota fiscal
+        int[] vetor = new int[5];
+        Random aleatorio = new Random();
+
+        for (int g = 0; g < 5; g++)
+            vetor[g] = aleatorio.nextInt(9);
+        
+        System.out.printf("%nO número da sua nota é: %n");
+        for (int i : vetor) 
+            System.out.print(i);
+
+        System.out.printf("%n");
         System.out.printf("%n" + comprador.pagar() + "%n");
         System.out.printf("%n" + comprador.toString() + "%n");
         System.out.printf("%n" + carroDaVenda.statusCarroVendido() + "%n");
