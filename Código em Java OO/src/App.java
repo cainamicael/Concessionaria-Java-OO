@@ -130,7 +130,7 @@ public class App {
                             int tamanho = sc.nextInt();
 
                             for (int i = 0; i < tamanho; i++){
-                                
+
                                 int a = i+1;
                                 System.out.printf("%nDigite o nome do vendedor" + a + ": %n");
                                 sc.nextLine();
@@ -157,7 +157,7 @@ public class App {
                     break;
                 case 2:
                 System.out.printf("%n Área do Cliente - Vamos mostrar todos os carros da loja vendidos e não vendidos %n");
-                // ver se já comprou e ou não, ver se tem cadastro ou não
+                // ver se já comprou e ou não, ver se tem cadastro ou não ,add cliente no arraylist, login pelo rg , cadastrar novo
                     break;
             
                 default:
