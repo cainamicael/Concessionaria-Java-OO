@@ -58,24 +58,32 @@ public class Vendedor extends Dados implements InterVendedor{
 
     @Override
     public void gerarNotaFiscal(Cliente comprador, Carro carroDaVenda) {
-    
-        
+        System.out.printf("%n" + comprador.pagar() + "%n");
+        System.out.printf("%n" + comprador.toString() + "%n");
+        System.out.printf("%n" + carroDaVenda.statusCarroVendido() + "%n");
+        System.out.printf("%nNome do vendedor: " + this.getNome() + "%n");
+        carroDaVenda.setVendido(true);
+        carroDaVenda.setQtdEstoque(getQtdEstoque()-1);
+        System.out.printf("%nCarro Pago e retirado do estoque da loja! Volte Sempre!%n ");
+
+    }
+
+    private int getQtdEstoque() {
+        return 0;
     }
 
     @Override
     public void intermediarTesteDrive(Cliente comprador, Carro carroDaVenda) {
-    
-        
+        System.out.printf("%n" + comprador.dirigir() + "%n");
+        System.out.printf("%n" + carroDaVenda.andar() + "%n");
+        System.out.printf("%nTeste concluído com sucesso! %n");
     }
 
+   
     @Override
-    public void realizarVenda(Cliente comprador, Carro carroDaVenda) {
-        
+    public String fazerOrcamento(Cliente comprador, Carro carroDaVenda) {
+        return " O carro " + carroDaVenda.getMarca() + carroDaVenda.getModelo() + " custa " + carroDaVenda.getValor() + " e aceitamos sua forma de pagamento: " + comprador.getFormaDePagamento(); 
     }
 
-    @Override
-    public void fazerOrcamento(Cliente comprador, Carro carroDaVenda) {
-        
-    }
  
 }

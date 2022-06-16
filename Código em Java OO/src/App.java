@@ -1,4 +1,5 @@
 import java.util.ArrayList;
+import java.util.Random;
 import java.util.Scanner;
 
 import classes.Carro;
@@ -58,7 +59,7 @@ public class App {
         int auxMenu2 = -1, auxMenu3 = -1;
         do{ //serve para sempre que for digitado 0, voltar para o começo
             System.out.printf("%n Escolha uma opção abaixo:"); //menu 01
-            System.out.printf("%n [1] Área Administrativa (Mostrar Tabelas)%n [2] Área do Comprador (Novos ou Veteranos) %n [0] Digite a qualquer momento para voltar para essa parte");
+            System.out.printf("%n [1] Área Administrativa (Mostrar Tabelas)%n [2] Área do Comprador (Novos ou Veteranos) %n [0] Quando quiser voltar para essa parte nos proximos menus");
             System.out.printf("%nSua escolha: ");
             escolha = sc.nextInt(); 
 
@@ -84,14 +85,17 @@ public class App {
     
                     System.out.printf("%n"); //mostrar os carros vendidos
                     for (Carro produto : carro) {
-                        if (produto.getComprador() != null)
-                            System.out.printf("%n"+ produto.statusCarroVendido() + "%n");
+                        if (produto.getQtdEstoque() != 0){
+                            if (produto.getComprador() != null)
+                                System.out.printf("%n"+ produto.statusCarroVendido() + "%n");
+                        }
                     }
     
                     System.out.printf("%n%n");// mostrar os carros à venda
                     for (Carro produto : carro ){
-                        if (produto.getComprador() == null){
-                            System.out.printf("%n"+produto.statusCarroVenda()+ "%n"); 
+                        if (produto.getQtdEstoque() != 0){
+                            if (produto.getComprador() == null)
+                                System.out.printf("%n"+produto.statusCarroVenda()+ "%n"); 
                         }
                     }
 
@@ -223,6 +227,8 @@ public class App {
                     case 1:
                     int foneC;
                     int indiceCliente = -1;
+                    int indiceCarro = -1;
+                    int c = 0;
                     boolean achou = false;
                     System.out.printf("%nDigite seu telefone SEM ESPAÇOS (ex: 999999999):%n");
                     foneC = sc.nextInt();
@@ -240,10 +246,34 @@ public class App {
 
                         System.out.printf("Verificamos que você já viu um carro. O carro que você viu foi: %n");
                         for (Carro comprado : carro){
-                            if (comprado.getComprador() == cliente.get(indiceCliente))
+                            if (comprado.getComprador() == cliente.get(indiceCliente)){
                                 System.out.printf("%n"+ comprado.getModelo() + " da marca " + comprado.getMarca() + " do ano " + comprado.getAno() + " da cor " + comprado.getCor() + "%n");
+                                indiceCarro = c;
+                            }
+                            c++;
                         }
+                       System.out.printf("%nVocê veio buscar seu carro? %n[1] Sim %n[2] Não %n[0] Voltar pro menu principal%n");
+                       int buscar = sc.nextInt();
+                       switch (buscar) {
+                        case 1:
+                            cliente.get(indiceCliente).buscar();
+                            Random aleatorio = new Random();
+                            int vendedorEscolhido = aleatorio.nextInt(vendedor.size()); // sorteia um vendedor para atender o cliente
+                            System.out.printf("%nO vendedor " + vendedor.get(vendedorEscolhido).getNome() + " vai lhe atender e gerar a nota fiscal!%n");
+                            System.out.printf("%nSua nota Fiscal: %n");
+                            vendedor.get(vendedorEscolhido).gerarNotaFiscal(cliente.get(indiceCliente), carro.get(indiceCarro));
+
+
+                            break;
+                        case 2:
+                            System.out.printf("%nNão se preocupe, está tudo certo com o seu carro! %n");
+                            break;
                        
+                        default:
+                            escolha = 0;
+                            break;
+                       }
+
                     } else {
                         System.out.printf("%nNão te achamos. Escolha a opção: QUERO ME CADASTRAR%n");
                         escolha = 0;
@@ -251,6 +281,83 @@ public class App {
 
                         break;
                     case 2:
+                    int repete = -1;
+                     do{
+                        System.out.printf("%nVamos mostrar os carros à venda: %n");
+
+                        System.out.printf("%n");// mostrar os carros à venda
+                        for (Carro produto : carro ){
+                            if (produto.getQtdEstoque() != 0){
+                                if (produto.getComprador() == null)
+                                    System.out.printf("%n"+produto.statusCarroVenda()+ "%n"); 
+                            }
+                        }
+                        System.out.printf("%nDigite modelo do carro: %n");
+                        sc.nextLine(); 
+                        String modeloC = sc.nextLine(); 
+                        int indiceCarro2 = -1;
+                        boolean achou2 = false;
+                        for (int i = 0; i < carro.size(); i++){
+                            if (carro.get(i).getModelo().toLowerCase().equals(modeloC.toLowerCase())){
+                                System.out.printf("%nSua escolha deu certo! Boa escolha!%n");
+                                indiceCarro2 = i;
+                                achou2 = true;
+                                 
+                            }
+                         }
+                         if (achou2){
+
+                            System.out.printf("%nVamos criar seu cadastro: %n");
+                            
+                            System.out.printf("%nDigite o seu nome: %n");
+                            String nomeC = sc.nextLine();
+                            System.out.printf("%nDigite o seu Rg: %n");
+                            String rgC = sc.next();
+                            System.out.printf("%nDigite o seu Telefone: %n");
+                            int telefoneC = sc.nextInt();
+                            System.out.printf("%nDigite o seu Endereço: %n");
+                            sc.nextLine();
+                            String enderecoC = sc.nextLine();
+                            System.out.printf("%nDigite a sua Forma de Pagamento %n");
+                            String formaC = sc.next();
+                            cliente.add(new Cliente(rgC, nomeC, telefoneC, enderecoC, formaC));
+
+                            System.out.printf("%nCadastrado com sucesso!%n");
+                            System.out.printf("%nO que você deseja?%n[1] Fazer orçamento%n[2] Fazer teste drive%n[3] Comprar%n");
+                            int aux = sc.nextInt();
+                            switch (aux) {
+                                case 1:
+                                    Random aleatorio = new Random();
+                                    int vendedorEscolhido = aleatorio.nextInt(vendedor.size()); // sorteia um vendedor para atender o cliente
+                                    System.out.println(vendedor.get(vendedorEscolhido).fazerOrcamento(cliente.get(cliente.size()-1), carro.get(indiceCarro2)));
+
+                                    break;
+                                case 2:
+                                    Random aleatorio2 = new Random();
+                                    int vendedorEscolhido2 = aleatorio2.nextInt(vendedor.size()); // sorteia um vendedor para atender o cliente
+                                    vendedor.get(vendedorEscolhido2).intermediarTesteDrive(cliente.get(cliente.size()-1), carro.get(indiceCarro2));
+                                    
+                                    break;
+                                case 3:
+                                    Random aleatorio3 = new Random();
+                                    int vendedorEscolhido3 = aleatorio3.nextInt(vendedor.size()); // sorteia um vendedor para atender o cliente
+                                    carro.get(indiceCarro2).setVendido(true);
+                                    carro.get(indiceCarro2).setComprador(cliente.get(cliente.size()-1));
+                                    vendedor.get(vendedorEscolhido3).gerarNotaFiscal(cliente.get(cliente.size()-1), carro.get(indiceCarro2));
+                                
+                                    break;
+                            
+                                default:
+                                    break;
+                            }
+
+
+                         } else {
+                            System.out.println("Você digitou errado! Tente novemente!");
+                            repete = 0;
+                         }
+                         
+                        } while (repete == 0);
                         
                         break;
                 
@@ -260,7 +367,6 @@ public class App {
 
                 // ver se já comprou e ou não, ver se tem cadastro ou não ,add cliente no arraylist, login pelo rg , cadastrar novo 
                     break;
-            
                 default:
                     break;
             }

@@ -36,12 +36,12 @@ public class Cliente extends Dados implements InterCliente {
 
     @Override
     public String dirigir() {
-        return this.nome + " está dirigindo o carro e sentindo o conforto, desempenho e economia dele! ";
+        return "Você dirigindo o carro e sentindo o conforto, desempenho e economia dele! ";
     }
 
     @Override
     public String pagar() {
-        return this.nome + " decidiu comprar o carro! Sua forma de pagamento é: " + this.formaDePagamento;
+        return "Você decidiu comprar o carro! Sua forma de pagamento é: " + this.formaDePagamento;
     }
 
     @Override
