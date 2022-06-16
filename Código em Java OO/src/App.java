@@ -121,6 +121,37 @@ public class App {
                             auxMenu2 = 0;
                         }
                     } while (auxMenu2 == 0);
+
+                    switch (auxMenu2) {
+                        case 1:
+                            System.out.printf("%n -------------Adicionar Vendedor------------- %n");
+
+                            System.out.printf("%nQUantos vendedores você quer adicionar?%nSua escolha: ");
+                            int tamanho = sc.nextInt();
+
+                            for (int i = 0; i < tamanho; i++){
+                                
+                                int a = i+1;
+                                System.out.printf("%nDigite o nome do vendedor" + a + ": %n");
+                                sc.nextLine();
+                                String nomeV = sc.nextLine();
+                                System.out.printf("%nDigite o RG do vendedor"+ a + ": %n");
+                                String rgV = sc.nextLine(); 
+                                System.out.printf("%nDigite os anos de experiência do vendedor"+ a + ": %n");
+                                int experienciaV = sc.nextInt();
+                                vendedor.add(new Vendedor(nomeV, rgV, experienciaV));
+
+                            }
+                            System.out.printf("%nVamos voltar para o início%n");
+                            escolha = 0;
+                            break;
+                        case 2:
+                            
+                            break;
+                    
+                        default:
+                            break;
+                    }
     
                     //add vendedor, add carro
                     break;
