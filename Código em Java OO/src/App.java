@@ -70,6 +70,7 @@ public class App {
 
             switch (escolha) {
                 case 1:
+
                     System.out.printf("%n -------------Área Administrativa------------- %n");
 
                     System.out.printf("%nVamos mostrar todas as montadoras fornecedoras: %n");
@@ -127,26 +128,69 @@ public class App {
                             System.out.printf("%n -------------Adicionar Vendedor------------- %n");
 
                             System.out.printf("%nQUantos vendedores você quer adicionar?%nSua escolha: ");
+
                             int tamanho = sc.nextInt();
+                            String nomeV, rgV;
+                            int experienciaV;
 
                             for (int i = 0; i < tamanho; i++){
 
                                 int a = i+1;
-                                System.out.printf("%nDigite o nome do vendedor" + a + ": %n");
+                                System.out.printf("%nDigite o nome do vendedor " + a + ": %n");
                                 sc.nextLine();
-                                String nomeV = sc.nextLine();
-                                System.out.printf("%nDigite o RG do vendedor"+ a + ": %n");
-                                String rgV = sc.nextLine(); 
-                                System.out.printf("%nDigite os anos de experiência do vendedor"+ a + ": %n");
-                                int experienciaV = sc.nextInt();
+                                nomeV = sc.nextLine();
+                                System.out.printf("%nDigite o RG do vendedor "+ a + ": %n");
+                                rgV = sc.nextLine(); 
+                                System.out.printf("%nDigite os anos de experiência do vendedor "+ a + ": %n");
+                                experienciaV = sc.nextInt();
                                 vendedor.add(new Vendedor(nomeV, rgV, experienciaV));
+                                System.out.printf("%Vendedor adicionado!%n");
 
                             }
                             System.out.printf("%nVamos voltar para o início%n");
                             escolha = 0;
+
                             break;
+
                         case 2:
+
+                            System.out.printf("%n -------------Adicionar Carro À Venda------------- %n");
+                            System.out.printf("%nQUantos carros você quer adicionar?%nSua escolha: ");
+
+                            int tamanho2 = sc.nextInt();
+                            int ano, qtdEstoque;
+                            String chassi, placa, marca, modelo, cor;
+                            double valor;
+                            int indiceMontadora;
                             
+                            for (int i = 0; i < tamanho2; i++){
+
+                                int a = i+1;
+                                System.out.printf("%nDigite o chassi do carro " + a + ": %n");
+                                chassi = sc.next();
+                                System.out.printf("%nDigite a placa do carro " + a + ": %n");
+                                placa = sc.next();
+                                System.out.printf("%nDigite a marca do carro " + a + ": %n");
+                                marca = sc.next();
+                                System.out.printf("%nDigite o modelo do carro " + a + ": %n");
+                                modelo = sc.next();
+                                System.out.printf("%nDigite a cor do carro " + a + ": %n");
+                                cor = sc.next();
+                                System.out.printf("%nDigite o ano do carro " + a + ": %n");
+                                ano = sc.nextInt();
+                                System.out.printf("%nDigite o valor do carro " + a + ": %n");
+                                valor = sc.nextDouble();
+                                System.out.printf("%nDigite a quantidade em estoque do carro " + a + ": %n");
+                                qtdEstoque = sc.nextInt();
+                                System.out.printf("%nEscolha a montadora:%n [0]Volvo%n[1]Audi%n[2]Bmw%n[3]Mercedes-Benz%n[4]Jaguar e Land Rover%n");
+                                indiceMontadora = sc.nextInt();
+                                carro.add(new Carro(chassi, placa, marca, modelo, cor, ano, valor, qtdEstoque, montadora.get(indiceMontadora)));   
+
+                            }
+
+                            System.out.printf("%nVamos voltar para o início%n");
+                            escolha = 0;
+
                             break;
                     
                         default:
