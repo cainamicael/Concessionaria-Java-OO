@@ -5,7 +5,7 @@ public abstract class Dados {
     protected String nome;
     protected String rg; 
     protected String endereco;
-    protected String telefone;
+    protected int telefone;
     
     public String getNome() {
         return nome;
@@ -25,13 +25,12 @@ public abstract class Dados {
     public void setEndereco(String endereco) {
         this.endereco = endereco;
     }
-    public String getTelefone() {
+    public int getTelefone() {
         return telefone;
     }
-    public void setTelefone(String telefone) {
+    public void setTelefone(int telefone) {
         this.telefone = telefone;
     }
 
-    // Rg e Telefone são Strings porque podem ter vários tipos de escrita Ex: 988888888 ou 9 8888-8888, logo, String aceita tudo
  
 }

@@ -14,10 +14,10 @@ public class App {
         //Cadastrando alguns clientes
 
         ArrayList<Cliente> cliente = new ArrayList<Cliente>();
-        cliente.add(new Cliente("0.000.000", "Cainã Micael", "988888880", "Rua sem nome, nº 0", "Débito"));
-        cliente.add(new Cliente("0.000.001", "Pedro Henrique", "988888881", "Rua sem nome, nº 1", "Crédito"));
-        cliente.add(new Cliente("0.000.002", "Juliana Albuquerque", "988888882", "Rua sem nome, nº 2", "Pix"));
-        cliente.add(new Cliente("0.000.003", "Marcos Vinicius", "988888883", "Rua sem nome, nº 3", "Financiado"));
+        cliente.add(new Cliente("0.000.000", "Cainã Micael", 988888880, "Rua sem nome, nº 0", "Débito"));
+        cliente.add(new Cliente("0.000.001", "Pedro Henrique", 988888881, "Rua sem nome, nº 1", "Crédito"));
+        cliente.add(new Cliente("0.000.002", "Juliana Albuquerque", 988888882, "Rua sem nome, nº 2", "Pix"));
+        cliente.add(new Cliente("0.000.003", "Marcos Vinicius", 988888883, "Rua sem nome, nº 3", "Financiado"));
 
         //Cadastrando os vendedores
         ArrayList<Vendedor> vendedor = new ArrayList<Vendedor>();
@@ -29,11 +29,11 @@ public class App {
 
         //cadastrar algumas Montadoras
         ArrayList<Montadora> montadora = new ArrayList<Montadora>();
-        montadora.add(new Montadora("43.999.424/0001-14", "VOLVO DO BRASIL VEICULOS LTDA", "Avenida Juscelino K de Oliveira, 2600, Lat Direita CIC, CURITIBA - PR CEP: 81260-900", "(41) 3405-5694")); //VOLVO
-        montadora.add(new Montadora("03.472.246/0004-05", "AUDI DO BRASIL INDUSTRIA E COMERCIO DE VEICULOS LTDA.", "Avenida das Industrias, S/N Galpaodocas 81 e 82 DISTRITO INDUSTRIAL BENEDITO STORANIVINHEDO - SP CEP: 13288-163", "(11) 3041-2959")); //AUDI
-        montadora.add(new Montadora("00.882.430/0007-70", "BMW DO BRASIL LTDA", "Avenida Doutor Chucri Zaidan, 1240 Conj 2302 VILA SAO FRANCISCO (ZONA SUL) SAO PAULO - SP CEP: 04711-130", "(11) 5186-0000")); //BMW
-        montadora.add(new Montadora("31.715.616/0003-34", "MERCEDES-BENZ CARS & VANS BRASIL - INDUSTRIA E COMERCIO DE VEICULOS LTDA", "Avenida Mercedes Benz, 679 Centro Log Viracopos Predio 411 Mznino DISTRITO INDUSTRIAL CAMPINAS - SP CEP: 13054-750", "(11) 4173-6611")); //MERCEDES-BENS
-        montadora.add(new Montadora("10.313.717/0001-47", "AGUAR E LAND ROVER BRASIL INDUSTRIA E COMERCIO DE VEICULOS LTDA", "Avenida Ibirapuera, 2332 Andar 10 INDIANOPOLIS SAO PAULO - SP CEP: 04028-002", "(11) 5056-7000")); //JAGUAR E LAND ROVER
+        montadora.add(new Montadora("43.999.424/0001-14", "VOLVO DO BRASIL VEICULOS LTDA", "Avenida Juscelino K de Oliveira, 2600, Lat Direita CIC, CURITIBA - PR CEP: 81260-900", 413405569)); //VOLVO
+        montadora.add(new Montadora("03.472.246/0004-05", "AUDI DO BRASIL INDUSTRIA E COMERCIO DE VEICULOS LTDA.", "Avenida das Industrias, S/N Galpaodocas 81 e 82 DISTRITO INDUSTRIAL BENEDITO STORANIVINHEDO - SP CEP: 13288-163", 1130412959)); //AUDI
+        montadora.add(new Montadora("00.882.430/0007-70", "BMW DO BRASIL LTDA", "Avenida Doutor Chucri Zaidan, 1240 Conj 2302 VILA SAO FRANCISCO (ZONA SUL) SAO PAULO - SP CEP: 04711-130", 1151860000)); //BMW
+        montadora.add(new Montadora("31.715.616/0003-34", "MERCEDES-BENZ CARS & VANS BRASIL - INDUSTRIA E COMERCIO DE VEICULOS LTDA", "Avenida Mercedes Benz, 679 Centro Log Viracopos Predio 411 Mznino DISTRITO INDUSTRIAL CAMPINAS - SP CEP: 13054-750", 1141736611)); //MERCEDES-BENS
+        montadora.add(new Montadora("10.313.717/0001-47", "AGUAR E LAND ROVER BRASIL INDUSTRIA E COMERCIO DE VEICULOS LTDA", "Avenida Ibirapuera, 2332 Andar 10 INDIANOPOLIS SAO PAULO - SP CEP: 04028-002", 1150567000)); //JAGUAR E LAND ROVER
 
  
         //cadastrar alguns Carros
@@ -52,9 +52,10 @@ public class App {
         carro.add(new Carro("68r R7ls62 7c vb2730", "MYB-3929", "Bmw", "320i", "Branco", 2013,  92990.00, 6, montadora.get(2)));
         carro.add(new Carro("7AU 9t45Au 4x Aw4677", "HVB-0203", "Mercedes-Benz", "G 63 amg", "Cinza", 2019, 1049900.00, 2, montadora.get(3)));
 
-        System.out.printf("%n%nOlá! Bem vindo a Premium Car Multimarcas  - Não vendemos carros, vendemos sonhos!!!");
+        //Início 
+        System.out.printf("%n%nOlá! Bem vindo a Premium Car Multimarcas  - Não vendemos carros, vendemos sonhos!!!%n");
         int escolha = -1;
-        int auxMenu2 = -1;
+        int auxMenu2 = -1, auxMenu3 = -1;
         do{ //serve para sempre que for digitado 0, voltar para o começo
             System.out.printf("%n Escolha uma opção abaixo:"); //menu 01
             System.out.printf("%n [1] Área Administrativa (Mostrar Tabelas)%n [2] Área do Comprador (Novos ou Veteranos) %n [0] Digite a qualquer momento para voltar para essa parte");
@@ -174,7 +175,8 @@ public class App {
                                 System.out.printf("%nDigite a marca do carro " + a + ": %n");
                                 marca = sc.next();
                                 System.out.printf("%nDigite o modelo do carro " + a + ": %n");
-                                modelo = sc.next();
+                                sc.nextLine();
+                                modelo = sc.nextLine();
                                 System.out.printf("%nDigite a cor do carro " + a + ": %n");
                                 cor = sc.next();
                                 System.out.printf("%nDigite o ano do carro " + a + ": %n");
@@ -183,8 +185,8 @@ public class App {
                                 valor = sc.nextDouble();
                                 System.out.printf("%nDigite a quantidade em estoque do carro " + a + ": %n");
                                 qtdEstoque = sc.nextInt();
-                                System.out.printf("%nEscolha a montadora:%n [0]Volvo%n[1]Audi%n[2]Bmw%n[3]Mercedes-Benz%n[4]Jaguar e Land Rover%n");
-                                indiceMontadora = sc.nextInt();
+                                System.out.printf("%nEscolha a montadora:%n[0]Volvo%n[1]Audi%n[2]Bmw%n[3]Mercedes-Benz%n[4]Jaguar e Land Rover%n");
+                                indiceMontadora = sc.nextInt(); 
                                 carro.add(new Carro(chassi, placa, marca, modelo, cor, ano, valor, qtdEstoque, montadora.get(indiceMontadora)));   
 
                             }
@@ -201,7 +203,61 @@ public class App {
                     //add vendedor, add carro
                     break;
                 case 2:
-                System.out.printf("%n Área do Cliente - Vamos mostrar todos os carros da loja vendidos e não vendidos %n");
+                System.out.printf("%n ------------- Área do Cliente ------------- %n");
+                //Menu 03
+                do{
+                    System.out.printf("%n [1] Já tenho Cadastro %n [2] Quero me Cadastrar %n [0] Voltar para o início");
+                    System.out.printf("%nSua escolha: ");
+                    auxMenu3 = sc.nextInt();
+                    if (auxMenu3 == 0){ //Opção para voltar ao começo
+                        System.out.printf("%n Você escolheu Voltar para o Início!");
+                        auxMenu3 = -1;
+                        escolha = 0;
+                    } else if (auxMenu3 != 1 && auxMenu3 != 2 && auxMenu3 != 0){ //Sempre repetir quando for diferente de 0, 1 e 2
+                        System.out.printf("%nOpção inválida");
+                        auxMenu3 = 0;
+                    }
+                } while (auxMenu3 == 0);
+
+                switch (auxMenu3) {
+                    case 1:
+                    int foneC;
+                    int indiceCliente = -1;
+                    boolean achou = false;
+                    System.out.printf("%nDigite seu telefone SEM ESPAÇOS (ex: 999999999):%n");
+                    foneC = sc.nextInt();
+                    System.out.printf("%nVamos procurar o Telefone " + foneC +" no cadastro!%n");
+
+                    for (int i = 0; i < cliente.size(); i++){
+                       if (cliente.get(i).getTelefone() == foneC){
+                            System.out.printf("%nAchamos Seu cadastro!%n");
+                            indiceCliente = i;
+                            achou = true;
+                       }
+                    }
+                    if (achou){
+                        System.out.printf("%nOlá, "+ cliente.get(indiceCliente).getNome() + "%n");
+
+                        System.out.printf("Verificamos que você já viu um carro. O carro que você viu foi: %n");
+                        for (Carro comprado : carro){
+                            if (comprado.getComprador() == cliente.get(indiceCliente))
+                                System.out.printf("%n"+ comprado.getModelo() + " da marca " + comprado.getMarca() + " do ano " + comprado.getAno() + " da cor " + comprado.getCor() + "%n");
+                        }
+                       
+                    } else {
+                        System.out.printf("%nNão te achamos. Escolha a opção: QUERO ME CADASTRAR%n");
+                        escolha = 0;
+                    }
+
+                        break;
+                    case 2:
+                        
+                        break;
+                
+                    default:
+                        break;
+                }
+
                 // ver se já comprou e ou não, ver se tem cadastro ou não ,add cliente no arraylist, login pelo rg , cadastrar novo 
                     break;
             

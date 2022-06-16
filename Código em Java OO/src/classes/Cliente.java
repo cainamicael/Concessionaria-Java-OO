@@ -14,7 +14,7 @@ public class Cliente extends Dados implements InterCliente {
         this.nome = nome;
     }
 
-    public Cliente(String rg, String nome, String fone, String endereco, String formaDePagamento) {
+    public Cliente(String rg, String nome, int fone, String endereco, String formaDePagamento) {
         this.rg = rg;
         this.nome = nome;
         this.telefone = fone;

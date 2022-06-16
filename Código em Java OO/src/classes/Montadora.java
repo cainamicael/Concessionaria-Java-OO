@@ -8,7 +8,7 @@ public class Montadora extends Dados {
     public Montadora() {
     }
 
-    public Montadora(String cnpj, String nome, String endereco, String telefone) {
+    public Montadora(String cnpj, String nome, String endereco, int telefone) {
         this.cnpj = cnpj;
         this.nome = nome;
         this.endereco = endereco;
