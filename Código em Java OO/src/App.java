@@ -55,63 +55,65 @@ public class App {
         //menu 01
         System.out.println("Olá! Bem vindo a Premium Car Multimarcas  - Não vendemos carros, vendemos sonhos!!!");
         int escolha = -1;
-        do{
-            System.out.println("Escolha uma opção abaixo:");
-            System.out.printf("%n [1] Área Administrativa (Mostrar Tabelas)%n [2] Área do Comprador (Novos ou Veteranos)");
+        do{ //serve para sempre que for digitado 0, voltar para o começo
+            System.out.printf("%n Escolha uma opção abaixo:");
+            System.out.printf("%n [1] Área Administrativa (Mostrar Tabelas)%n [2] Área do Comprador (Novos ou Veteranos) %n [0] Digite a qualquer momento para voltar para essa parte");
             System.out.printf("%nSua escolha: ");
             escolha = sc.nextInt(); 
-            if (escolha < 1 || escolha >2)
-                System.out.println("Opção inválida! Tente novamente!");
-            else
-                System.out.printf("%nVamos Prosseguir...%n");
-        } while(escolha < 1 || escolha >2);
 
-        switch (escolha) {
-            case 1:
-                System.out.printf("%n -------------Área Administrativa------------- %n");
+            if (escolha == 0)
+                System.out.printf("%n Você escolheu repetir!");
+            else if (escolha != 1 && escolha != 2 && escolha != 0){
+                System.out.printf("%nOpção inválida");
+                escolha = 0;
+            }
 
-                System.out.printf("%nVamos mostrar todos os vendedores da loja: %n");
-
-                for (Vendedor funcionario : vendedor) {
-                    System.out.printf("%n %s,  que tem %d ano(s) de Experiência",funcionario.getNome(), funcionario.getExperiencia());
-                }
-                System.out.printf("%n%n");
-
-                System.out.printf("%nVamos mostrar todos os carros da loja: %n");
-
-                System.out.printf("%n"); //mostrar os carros vendidos
-                for (Carro produto : carro) {
-                    if (produto.getComprador() != null)
-                        System.out.printf("%n"+ produto.statusCarroVendido() + "%n");
-                }
-
-                System.out.printf("%n%n");// mostrar os carros à venda
-                for (Carro produto : carro ){
-                    if (produto.getComprador() == null){
-                        System.out.printf("%n"+produto.statusCarroVenda()+ "%n"); 
+            switch (escolha) {
+                case 1:
+                    System.out.printf("%n -------------Área Administrativa------------- %n");
+    
+                    System.out.printf("%nVamos mostrar todos os vendedores da loja: %n");
+    
+                    for (Vendedor funcionario : vendedor) {
+                        System.out.printf("%n %s,  que tem %d ano(s) de Experiência",funcionario.getNome(), funcionario.getExperiencia());
                     }
-                }
-                System.out.printf("%n");
-
-                System.out.printf("%nVamos mostrar todos os clientes cadastrados: %n");
-
-                System.out.printf("%n");
-                for (Cliente comprador : cliente ){
-                    System.out.printf("%n"+comprador.toString()+ "%n");
-                }
-                System.out.printf("%n");
-
-                //add vendedor, add carro
-                break;
-            case 2:
-            System.out.printf("%n Área do Cliente - Vamos mostrar todos os carros da loja vendidos e não vendidos %n");
-            // ver se já comprou e ou não, ver se tem cadastro ou não
-                break;
-        
-            default:
-                break;
-        }
-        
+                    System.out.printf("%n%n");
+    
+                    System.out.printf("%nVamos mostrar todos os carros da loja: %n");
+    
+                    System.out.printf("%n"); //mostrar os carros vendidos
+                    for (Carro produto : carro) {
+                        if (produto.getComprador() != null)
+                            System.out.printf("%n"+ produto.statusCarroVendido() + "%n");
+                    }
+    
+                    System.out.printf("%n%n");// mostrar os carros à venda
+                    for (Carro produto : carro ){
+                        if (produto.getComprador() == null){
+                            System.out.printf("%n"+produto.statusCarroVenda()+ "%n"); 
+                        }
+                    }
+                    System.out.printf("%n");
+    
+                    System.out.printf("%nVamos mostrar todos os clientes cadastrados: %n");
+    
+                    System.out.printf("%n");
+                    for (Cliente comprador : cliente ){
+                        System.out.printf("%n"+comprador.toString()+ "%n");
+                    }
+                    System.out.printf("%n");
+    
+                    //add vendedor, add carro
+                    break;
+                case 2:
+                System.out.printf("%n Área do Cliente - Vamos mostrar todos os carros da loja vendidos e não vendidos %n");
+                // ver se já comprou e ou não, ver se tem cadastro ou não
+                    break;
+            
+                default:
+                    break;
+            }
+        } while(escolha == 0);
         sc.close();
     }
 }
