@@ -139,11 +139,11 @@ public class Carro implements InterCarro {
 
     @Override
     public String statusCarroVenda() {
-        return "À Venda: Marca = " + marca + ", modelo = " + modelo + ", ano = "+ ano + ", valor = " + valor + ", quantidade em estoque = " + qtdEstoque;
+        return "À Venda: Marca = " + marca + ", modelo = " + modelo + ", ano = "+ ano + ", cor = " + cor + ", valor = " + valor + ", quantidade em estoque = " + qtdEstoque;
     }
     @Override
     public String statusCarroVendido() {
-        return "Vendido:  Marca = " + marca + ", modelo = " + modelo + ", valor = " + valor + ", ano = " + ano + ", comprador = " + comprador.getNome();
+        return "Vendido:  Marca = " + marca + ", modelo = " + modelo + ", cor = " + cor + ", valor = " + valor + ", ano = " + ano + ", comprador = " + comprador.getNome();
     }
   
 

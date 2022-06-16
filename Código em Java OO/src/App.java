@@ -132,6 +132,7 @@ public class App {
                             int tamanho = sc.nextInt();
                             String nomeV, rgV;
                             int experienciaV;
+                            
 
                             for (int i = 0; i < tamanho; i++){
 
@@ -144,8 +145,8 @@ public class App {
                                 System.out.printf("%nDigite os anos de experiência do vendedor "+ a + ": %n");
                                 experienciaV = sc.nextInt();
                                 vendedor.add(new Vendedor(nomeV, rgV, experienciaV));
-                                System.out.printf("%Vendedor adicionado!%n");
-
+                                System.out.println("Vendedor adicionado com sucesso!");
+                                
                             }
                             System.out.printf("%nVamos voltar para o início%n");
                             escolha = 0;
