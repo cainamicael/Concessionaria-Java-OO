@@ -173,16 +173,16 @@ public class App {
 
                                 int a = i+1;
                                 System.out.printf("%nDigite o chassi do carro " + a + ": %n");
-                                chassi = sc.next();
-                                System.out.printf("%nDigite a placa do carro " + a + ": %n");
-                                placa = sc.next();
-                                System.out.printf("%nDigite a marca do carro " + a + ": %n");
-                                marca = sc.next();
-                                System.out.printf("%nDigite o modelo do carro " + a + ": %n");
                                 sc.nextLine();
+                                chassi = sc.nextLine();
+                                System.out.printf("%nDigite a placa do carro " + a + ": %n");
+                                placa = sc.nextLine();
+                                System.out.printf("%nDigite a marca do carro " + a + ": %n");                               
+                                marca = sc.nextLine();
+                                System.out.printf("%nDigite o modelo do carro " + a + ": %n");
                                 modelo = sc.nextLine();
                                 System.out.printf("%nDigite a cor do carro " + a + ": %n");
-                                cor = sc.next();
+                                cor = sc.nextLine();
                                 System.out.printf("%nDigite o ano do carro " + a + ": %n");
                                 ano = sc.nextInt();
                                 System.out.printf("%nDigite o valor do carro " + a + ": %n");
