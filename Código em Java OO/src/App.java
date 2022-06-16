@@ -52,18 +52,18 @@ public class App {
         carro.add(new Carro("68r R7ls62 7c vb2730", "MYB-3929", "Bmw", "320i", "Branco", 2013,  92990.00, 6, montadora.get(2)));
         carro.add(new Carro("7AU 9t45Au 4x Aw4677", "HVB-0203", "Mercedes-Benz", "G 63 amg", "Cinza", 2019, 1049900.00, 2, montadora.get(3)));
 
-        //menu 01
-        System.out.println("Olá! Bem vindo a Premium Car Multimarcas  - Não vendemos carros, vendemos sonhos!!!");
+        System.out.printf("%n%nOlá! Bem vindo a Premium Car Multimarcas  - Não vendemos carros, vendemos sonhos!!!");
         int escolha = -1;
+        int auxMenu2 = -1;
         do{ //serve para sempre que for digitado 0, voltar para o começo
-            System.out.printf("%n Escolha uma opção abaixo:");
+            System.out.printf("%n Escolha uma opção abaixo:"); //menu 01
             System.out.printf("%n [1] Área Administrativa (Mostrar Tabelas)%n [2] Área do Comprador (Novos ou Veteranos) %n [0] Digite a qualquer momento para voltar para essa parte");
             System.out.printf("%nSua escolha: ");
             escolha = sc.nextInt(); 
 
-            if (escolha == 0)
+            if (escolha == 0) //Opção para voltar ao começo
                 System.out.printf("%n Você escolheu repetir!");
-            else if (escolha != 1 && escolha != 2 && escolha != 0){
+            else if (escolha != 1 && escolha != 2 && escolha != 0){ //Sempre repetir quando for diferente de 0, 1 e 2
                 System.out.printf("%nOpção inválida");
                 escolha = 0;
             }
@@ -71,15 +71,14 @@ public class App {
             switch (escolha) {
                 case 1:
                     System.out.printf("%n -------------Área Administrativa------------- %n");
-    
-                    System.out.printf("%nVamos mostrar todos os vendedores da loja: %n");
-    
-                    for (Vendedor funcionario : vendedor) {
-                        System.out.printf("%n %s,  que tem %d ano(s) de Experiência",funcionario.getNome(), funcionario.getExperiencia());
+
+                    System.out.printf("%nVamos mostrar todas as montadoras fornecedoras: %n");
+
+                    for (Montadora mont : montadora) {
+                        System.out.printf("%nNome: " +mont.getNome() + ", Telefone: "+ mont.getTelefone() + ", Endereço: "+ mont.getEndereco() + "%n");
                     }
-                    System.out.printf("%n%n");
     
-                    System.out.printf("%nVamos mostrar todos os carros da loja: %n");
+                    System.out.printf("%n%nVamos mostrar todos os carros da loja: %n");
     
                     System.out.printf("%n"); //mostrar os carros vendidos
                     for (Carro produto : carro) {
@@ -93,15 +92,35 @@ public class App {
                             System.out.printf("%n"+produto.statusCarroVenda()+ "%n"); 
                         }
                     }
-                    System.out.printf("%n");
+
+                    System.out.printf("%n%nVamos mostrar todos os vendedores da loja: %n");
     
+                    for (Vendedor funcionario : vendedor) {
+                        System.out.printf("%n %s,  que tem %d ano(s) de Experiência",funcionario.getNome(), funcionario.getExperiencia());
+                    }
+                    System.out.printf("%n%n");
+                    
                     System.out.printf("%nVamos mostrar todos os clientes cadastrados: %n");
     
                     System.out.printf("%n");
                     for (Cliente comprador : cliente ){
-                        System.out.printf("%n"+comprador.toString()+ "%n");
+                        System.out.printf("%n"+comprador.toString());
                     }
-                    System.out.printf("%n");
+                    System.out.printf("%n%n");
+                    //menu 02
+                    do{
+                        System.out.printf("%n [1] Adicionar Vendedor%n [2] Adicionar Carro %n [0] Voltar para o início");
+                        System.out.printf("%nSua escolha: ");
+                        auxMenu2 = sc.nextInt();
+                        if (auxMenu2 == 0){ //Opção para voltar ao começo
+                            System.out.printf("%n Você escolheu Voltar para o Início!");
+                            auxMenu2 = -1;
+                            escolha = 0;
+                        } else if (auxMenu2 != 1 && auxMenu2 != 2 && auxMenu2 != 0){ //Sempre repetir quando for diferente de 0, 1 e 2
+                            System.out.printf("%nOpção inválida");
+                            auxMenu2 = 0;
+                        }
+                    } while (auxMenu2 == 0);
     
                     //add vendedor, add carro
                     break;
