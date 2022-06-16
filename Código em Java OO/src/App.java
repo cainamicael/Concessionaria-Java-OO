@@ -203,8 +203,6 @@ public class App {
                         default:
                             break;
                     }
-    
-                    //add vendedor, add carro
                     break;
                 case 2:
                 System.out.printf("%n ------------- Área do Cliente ------------- %n");
@@ -364,8 +362,6 @@ public class App {
                     default:
                         break;
                 }
-
-                // ver se já comprou e ou não, ver se tem cadastro ou não ,add cliente no arraylist, login pelo rg , cadastrar novo 
                     break;
                 default:
                     break;
