@@ -9,3 +9,5 @@ Marcos Vinicius,
 Pedro Henrique 
 
 Link do vídeo mostrando o uso do programa: https://www.youtube.com/watch?v=G9O9SEpMivc
+
+Link do diagrama de classes:https://lucid.app/lucidchart/d43bbe52-89c9-4d08-8616-e1f9f5178637/edit?view_items=rZRp8b~b0koy&invitationId=inv_211f0f44-432e-4458-817e-0f18fa4c90b8#
